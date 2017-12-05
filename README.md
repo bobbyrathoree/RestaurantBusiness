@@ -1,1 +1,1 @@
-## Restaurant Business using Dropwizard
+## Restaurant Business using Dropwizard. 
