@@ -32,7 +32,7 @@ Second, we'll add a bunch of *libraries as dependencies* that we'll be using in 
 
 ### Test dependencies:
 ```
-	    <dependency>
+        <dependency>
             <groupId>io.dropwizard</groupId>
             <artifactId>dropwizard-testing</artifactId>
             <version>${dropwizard.version}</version>
@@ -54,7 +54,7 @@ Second, we'll add a bunch of *libraries as dependencies* that we'll be using in 
 
 ###  Database dependencies:
 ```
-	    <dependency>
+        <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>6.0.6</version>
