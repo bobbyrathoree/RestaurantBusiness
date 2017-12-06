@@ -13,16 +13,11 @@ Other libraries used by Dropwizard include Jackson (for JSON), Guava, Hibernate 
 
 ## Using Maven to set up our project
 First we need to add a *dropwizard.version* property in our POM.xml file. I have used 1.2.0, i.e one version older than the latest, to keep us from any unfixed, unfound bugs.
-...
-<properties>
-	<dropwizard.version>1.2.0</dropwizard.version>
-</properties>
-...
+
 
 Second, we'll add a bunch of *libraries as dependencies* that we'll be using in our project.
-### For main purposes:
-...
-<dependencies>
+###  Main dependencies:
+```
         <dependency>
             <groupId>io.dropwizard</groupId>
             <artifactId>dropwizard-core</artifactId>
@@ -34,12 +29,11 @@ Second, we'll add a bunch of *libraries as dependencies* that we'll be using in 
             <artifactId>dropwizard-db</artifactId>
             <version>${dropwizard.version}</version>
         </dependency>
-</dependencies>
-...
+```
 
-### For testing purposes:
-...
-	<dependency>
+### Test dependencies:
+```
+	        <dependency>
             <groupId>io.dropwizard</groupId>
             <artifactId>dropwizard-testing</artifactId>
             <version>${dropwizard.version}</version>
@@ -57,25 +51,85 @@ Second, we'll add a bunch of *libraries as dependencies* that we'll be using in 
             <version>1.9.5</version>
             <scope>test</scope>
         </dependency>
-...
+```       
 
-### For Database:
-...
-	<dependency>
+###  Database dependencies:
+```
+	        <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>6.0.6</version>
         </dependency>
-	<dependency>
+	        <dependency>
             <groupId>io.dropwizard</groupId>
             <artifactId>dropwizard-jdbi</artifactId>
             <version>${dropwizard.version}</version>
         </dependency>
-...
+```
 
-### XML Part: DONE!
+## SQL/DB setup
+Find restaurants.sql schema file under root folder and execute via mySQL command line. Also update restaurants.yml file with appropriate SQL DB username and password
+```concept
+create database internship_dataone;
+use internship_dataone;
+create table orders(
+  -- primary key
+  id bigint primary key not null auto_increment,
+  customer_name varchar(255) not null,
+  item_ordered varchar(255) not null
+);
 
-## Coding Part:
+INSERT INTO orders (customer_name, item_ordered) values ('Bobby', 'Sandwich');
+
+INSERT INTO orders (customer_name, item_ordered) values ('Rohit', 'Burger');
+
+INSERT INTO orders (customer_name, item_ordered) values ('Ashish', 'Fries');
+
+INSERT INTO orders (customer_name, item_ordered) values ('Nikunj', 'Cola');
+```
+
+restaurant.yml:
+```concept
+database:
+  driverClass: com.mysql.cj.jdbc.Driver
+  url: jdbc:mysql://localhost/internship_dataone
+  user: YOUR_DB_USERNAME
+  password: YOUR_DB_PASSWORD
+  ...
+```
+
+## Compile and run unit tests
+To build and run tests
+```concept
+$mvn package
+```
+
+Once above maven command is executed, a jar called **RestaurantBusiness-1.0-SNAPSHOT.jar** can be found under "target" folder. To start RestaurantBusiness dropwizard server, execute:
+
+```concept
+$java -jar target/RestaurantBusiness-1.0-SNAPSHOT.jar server restaurant.yml
+```
+
+## cURL commands
+```concept
+View All Orders:
+curl -v "http://localhost:8080/getAllOrders"
+```
+```
+Get a specific order:
+curl -v "http://localhost:8080/getOrder/1" -X GET
+```
+```
+Place a new order:
+curl -v "http://localhost:8080/putOrder" -X POST -d '{"customer_name":"Ruby","item_ordered":"Sandwitch2"}' -H "Content-Type: application/json" 
+```
+```
+Edit an existing order:
+curl -v "http://localhost:8080/editOrder/6" -X PUT -d '{"customer_name":"Ruby","item_ordered":"Sandwitch and Cola"}' -H "Content-Type: application/json"
+```
+
+
+## Documentation:
 
 We **need** these types of classes while implementing Dropwizard in our project:
 1. **Configuration class:** which specifies environment-specific parameters (including a .yml file, called YAML).
@@ -83,7 +137,3 @@ We **need** these types of classes while implementing Dropwizard in our project:
 3. **Representation class:** which uses Jackson to perform JSON Serialization.
 4. **Resource class:** which makes use of Jersey to give life to our code. Here we give URI/Path to our APIs, eg. @GET, @PUT, @POST each followed by @Path and provide implementations for the same.
 5. **Health Check class:** which is a way of adding small tests to your application to allow you to verify that your application is functioning correctly in production.
-
-### One more class:
-1. DAO (Data Access Object) class: *What is DAO?* It is a object/interface, which is used to access data from database of data storage. *Why use it?* it abstracts the retrieval of data from a data resource such as a database. The concept is to **separate a data resource's client interface from its data access mechanism.**
-In English, it means that the source of the data can change. Consider, for example, that your application is deployed in an environment that accesses an Oracle database. Then it is subsequently deployed to an environment that uses Microsoft SQL Server. In order to prevent rewriting your application to use SQL Server instead of Oracle, DAO creates a layer between your application logic and the data access.
