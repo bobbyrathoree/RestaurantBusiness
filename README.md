@@ -14,6 +14,11 @@ Other libraries used by Dropwizard include Jackson (for JSON), Guava, Hibernate 
 ## Using Maven to set up our project
 First we need to add a *dropwizard.version* property in our POM.xml file. I have used 1.2.0, i.e one version older than the latest, to keep us from any unfixed, unfound bugs.
 
+```concept
+    <properties>
+        <dropwizard.version>1.2.0</dropwizard.version>
+    </properties>
+```
 Second, we'll add a bunch of *libraries as dependencies* that we'll be using in our project.
 ###  Main dependencies:
 ```
