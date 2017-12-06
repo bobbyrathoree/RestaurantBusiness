@@ -27,7 +27,7 @@ public class RestaurantApplication extends Application<RestaurantConfiguration> 
         ApplicationHealthCheck healthCheck = new ApplicationHealthCheck(dbi.onDemand(MyRestaurantResource.class));
         environment.healthChecks().register(Constants.SERVICE, healthCheck);
 
-        // register my com.test.internship.resource
+        // register my com.internship.dataone.resource
         environment.jersey().register((dbi.onDemand(MyRestaurantResource.class)));
 
 
