@@ -64,7 +64,7 @@ Second, we'll add a bunch of *libraries as dependencies* that we'll be using in 
             <artifactId>mysql-connector-java</artifactId>
             <version>6.0.6</version>
         </dependency>
-	        <dependency>
+        <dependency>
             <groupId>io.dropwizard</groupId>
             <artifactId>dropwizard-jdbi</artifactId>
             <version>${dropwizard.version}</version>
