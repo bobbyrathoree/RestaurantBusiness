@@ -1,6 +1,6 @@
 # Restaurant Business using Dropwizard.
 
-## So what is Dropwizard?
+## What is Dropwizard?
 As per [dropwizard.io] (http://www.dropwizard.io/1.0.5/docs/getting-started.html)
 > Dropwizard straddles the line between being a library and a framework. Its goal is to provide performant, reliable implementations of everything a production-ready web application needs. Because this functionality is extracted into a reusable library, your application remains lean and focused, reducing both time-to-market and maintenance burdens.
 
@@ -13,7 +13,6 @@ Other libraries used by Dropwizard include Jackson (for JSON), Guava, Hibernate 
 
 ## Using Maven to set up our project
 First we need to add a *dropwizard.version* property in our POM.xml file. I have used 1.2.0, i.e one version older than the latest, to keep us from any unfixed, unfound bugs.
-
 
 Second, we'll add a bunch of *libraries as dependencies* that we'll be using in our project.
 ###  Main dependencies:
@@ -33,7 +32,7 @@ Second, we'll add a bunch of *libraries as dependencies* that we'll be using in 
 
 ### Test dependencies:
 ```
-	        <dependency>
+	    <dependency>
             <groupId>io.dropwizard</groupId>
             <artifactId>dropwizard-testing</artifactId>
             <version>${dropwizard.version}</version>
@@ -55,7 +54,7 @@ Second, we'll add a bunch of *libraries as dependencies* that we'll be using in 
 
 ###  Database dependencies:
 ```
-	        <dependency>
+	    <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>6.0.6</version>
@@ -68,7 +67,9 @@ Second, we'll add a bunch of *libraries as dependencies* that we'll be using in 
 ```
 
 ## SQL/DB setup
-Find restaurants.sql schema file under root folder and execute via mySQL command line. Also update restaurants.yml file with appropriate SQL DB username and password
+Find restaurants.sql schema file under root folder and execute via mySQL command line. Also update restaurant.yml file with appropriate SQL DB username and password
+
+**restaurant.sql**
 ```concept
 create database internship_dataone;
 use internship_dataone;
@@ -88,7 +89,7 @@ INSERT INTO orders (customer_name, item_ordered) values ('Ashish', 'Fries');
 INSERT INTO orders (customer_name, item_ordered) values ('Nikunj', 'Cola');
 ```
 
-restaurant.yml:
+**restaurant.yml:**
 ```concept
 database:
   driverClass: com.mysql.cj.jdbc.Driver
@@ -99,7 +100,7 @@ database:
 ```
 
 ## Compile and run unit tests
-To build and run tests
+Once repository is cloned/downloaded in a folder, use below maven command to build a fatJar (which will also run unit tests)
 ```concept
 $mvn package
 ```
@@ -116,7 +117,7 @@ View All Orders:
 curl -v "http://localhost:8080/getAllOrders"
 ```
 ```
-Get a specific order:
+View a specific order:
 curl -v "http://localhost:8080/getOrder/1" -X GET
 ```
 ```
