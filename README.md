@@ -1,15 +1,15 @@
 # Restaurant Business using Dropwizard.
 
 ## What is Dropwizard?
-As per [dropwizard.io] (http://www.dropwizard.io/1.0.5/docs/getting-started.html)
+As per [dropwizard.io](http://www.dropwizard.io/1.0.5/docs/getting-started.html)
 > Dropwizard straddles the line between being a library and a framework. Its goal is to provide performant, reliable implementations of everything a production-ready web application needs. Because this functionality is extracted into a reusable library, your application remains lean and focused, reducing both time-to-market and maintenance burdens.
 
 To host our Restaurant Business application, we need a HTTP server to host it on.
-Luckily, dropwizard provides us with [Jetty] (http://www.eclipse.org/jetty/), which is an incrediblely tuned HTTP server.
+Luckily, dropwizard provides us with [Jetty](http://www.eclipse.org/jetty/), which is an incrediblely tuned HTTP server.
 
-The two mainstream verbs provided by HTTP are GET and POST. But in order to build a RESTful application, we can't modify data using a GET request (or else it won't be RESTful). This is what PUT, POST and DELETE are for. Dropwizard includes for us [Jersey] (https://jersey.github.io/) which allows us to write clean, testable classes which gracefully map HTTP requests to simple Java objects.
+The two mainstream verbs provided by HTTP are GET and POST. But in order to build a RESTful application, we can't modify data using a GET request (or else it won't be RESTful). This is what PUT, POST and DELETE are for. Dropwizard includes for us [Jersey](https://jersey.github.io/) which allows us to write clean, testable classes which gracefully map HTTP requests to simple Java objects.
 
-Other libraries used by Dropwizard include Jackson (for JSON), Guava, Hibernate Validator, ([more..] (http://www.dropwizard.io/1.0.5/docs/getting-started.html))
+Other libraries used by Dropwizard include Jackson (for JSON), Guava, Hibernate Validator, ([more..](http://www.dropwizard.io/1.0.5/docs/getting-started.html))
 
 ## Using Maven to set up our project
 First we need to add a *dropwizard.version* property in our POM.xml file. I have used 1.2.0, i.e one version older than the latest, to keep us from any unfixed, unfound bugs.
