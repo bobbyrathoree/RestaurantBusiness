@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="00003eb6-a151-4681-bbbb-d84ae9beabae" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/restaurant.yml" afterPath="$PROJECT_DIR$/restaurant.yml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/internship/dataone/resource/MyRestaurantResource.java" afterPath="$PROJECT_DIR$/src/main/java/com/internship/dataone/resource/MyRestaurantResource.java" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/test/ApplicationMethodsTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/test/ApplicationMethodsTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -27,8 +24,8 @@
       <file leaf-file-name="ApplicationMethodsTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/test/ApplicationMethodsTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+            <state relative-caret-position="234">
+              <caret line="13" column="33" lean-forward="true" selection-start-line="13" selection-start-column="33" selection-end-line="13" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -149,8 +146,8 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$MAVEN_REPOSITORY$/org/assertj/assertj-core/3.8.0/assertj-core-3.8.0.jar!/org/assertj/core/api/Assertions.class" />
         <option value="$PROJECT_DIR$/restaurant.yml" />
-        <option value="$PROJECT_DIR$/src/test/java/com/test/ApplicationMethodsTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/internship/dataone/resource/MyRestaurantResource.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/test/ApplicationMethodsTest.java" />
       </list>
     </option>
   </component>
@@ -505,8 +502,16 @@
       <workItem from="1514463290293" duration="53000" />
       <workItem from="1514463352726" duration="700000" />
       <workItem from="1514488127168" duration="4328000" />
-      <workItem from="1516771035625" duration="7383000" />
+      <workItem from="1516771035625" duration="7964000" />
     </task>
+    <task id="LOCAL-00001" summary="Changed Test cases. Uses JUnit now.">
+      <created>1516859939055</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1516859939056</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -542,7 +547,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25950000" />
+    <option name="totallyTimeSpent" value="26531000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="62" y="-11" width="1539" height="912" extended-state="6" />
@@ -610,6 +615,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Changed Test cases. Uses JUnit now." />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed Test cases. Uses JUnit now." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1020,8 +1029,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/test/ApplicationMethodsTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        <state relative-caret-position="234">
+          <caret line="13" column="33" lean-forward="true" selection-start-line="13" selection-start-column="33" selection-end-line="13" selection-end-column="33" />
           <folding />
         </state>
       </provider>

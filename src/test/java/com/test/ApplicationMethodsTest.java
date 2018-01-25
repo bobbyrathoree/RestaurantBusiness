@@ -86,6 +86,4 @@ public class ApplicationMethodsTest {
         assertThat(item_ordered).isNotEmpty();
         assertThat(item_ordered).isEqualToIgnoringCase(EDITED_ORDER_ITEM);
     }
-
-
 }
