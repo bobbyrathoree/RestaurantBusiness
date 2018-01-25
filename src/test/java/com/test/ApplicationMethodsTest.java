@@ -64,7 +64,7 @@ public class ApplicationMethodsTest {
         // Order added?
         assertThat(putUrlResponse.getStatus()).isEqualTo(200);
 
-        //TODO 'data' from Representation class comes in form of LinkedHashMap; need to cehck why
+        // TODO data from Representation class comes in form of LinkedHashMap
         LinkedHashMap<String, String> data = (LinkedHashMap<String, String>) putUrlResponse.readEntity(Representation.class).getData();
 
         String orderId = String.valueOf(data.get("id"));
@@ -85,7 +85,6 @@ public class ApplicationMethodsTest {
         String item_ordered = data2.get("item_ordered");
         assertThat(item_ordered).isNotEmpty();
         assertThat(item_ordered).isEqualToIgnoringCase(EDITED_ORDER_ITEM);
-
     }
 
 

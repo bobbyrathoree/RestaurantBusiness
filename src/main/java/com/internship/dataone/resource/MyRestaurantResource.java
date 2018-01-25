@@ -30,7 +30,6 @@ public abstract class MyRestaurantResource {
     abstract RestaurantDao restaurantDao();
 
 
-
     @GET
     @Path("/getAllOrders")
     public Representation<List<RestaurantOrder>> getAllOrders() {
@@ -38,7 +37,6 @@ public abstract class MyRestaurantResource {
         List<RestaurantOrder> orders = restaurantDao().getAllOrders();
         Representation<List<RestaurantOrder>> ordersToReturn = new Representation<>(HttpStatus.OK_200, orders);
         return ordersToReturn;
-
     }
 
 
@@ -98,5 +96,4 @@ public abstract class MyRestaurantResource {
         }
         return null;
     }
-
 }
